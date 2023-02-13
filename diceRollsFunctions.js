@@ -45,24 +45,30 @@ const savingThrow = (abilityModifier, saveDcToBeat) =>{
 };
 // console.log(savingThrow(2,10))
 
-let practiceAc = 14;
-let heroAC = 18;
+
 
 const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acToHit) =>{
     let totalToHit = rollDice();
+    let damage = 0
     if(totalToHit === 20){
         console.log(`You rolled a ${totalToHit}\nCRITICAL HIT!`);
-        return damageRoll(damageBonus,damageDie,numberOfDamageDice) + damageRoll(0,damageDie);
+        damage =  damageRoll(damageBonus,damageDie,numberOfDamageDice) + damageRoll(0,damageDie);
+        console.log(`You do ${damage} damage to the enemy!`)
+        return damage
         
     }else if(totalToHit === 1){
         console.log(`You rolled a ${totalToHit}\nEPIC FAILURE!`);//pull from random shit top happen
-        return `Bad shit happens to you`
+        console.log( `Bad shit happens to you`)
+        return 0
     }else{
     console.log(`You rolled a ${totalToHit += hitBonus} to hit`)
         if(totalToHit > acToHit){
-            return `You do ${damageRoll(damageBonus,damageDie, numberOfDamageDice)} damage`
+            damage = damageRoll(damageBonus,damageDie, numberOfDamageDice)
+            console.log(`You do ${damage} damage to the enemy!`)
+            return damage
         }else{
-            return `Your attack missed!`
+            console.log( `Your attack missed!`)
+            return 0
 }
 };
 }
