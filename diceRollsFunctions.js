@@ -65,7 +65,7 @@ const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acT
 }
 };
 }
-console.log(rollToWack(2,2,12,1, practiceAc))
+
 //Though he numbers are hard coded, they can be filled in from properties from the character objects.
 // console.log(rollToWack(2,2,12,1,practiceAc))
 // The function above needs to be simplified a little more.  Just have it calculate to hit.
@@ -88,7 +88,7 @@ console.log(rollToWack(2,2,12,1, practiceAc))
             return `Your attack missed!`
 }
 };
-}
+
 
 
 module.exports={
