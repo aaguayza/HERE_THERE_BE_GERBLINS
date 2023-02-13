@@ -43,7 +43,7 @@ const savingThrow = (abilityModifier, saveDcToBeat) =>{
         return 'Failed!'
     }
 };
-console.log(savingThrow(2,10))
+// console.log(savingThrow(2,10))
 
 let practiceAc = 14
 
@@ -65,6 +65,7 @@ const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acT
 }
 };
 }
+console.log(rollToWack(2,2,12,1, practiceAc))
 //Though he numbers are hard coded, they can be filled in from properties from the character objects.
 // console.log(rollToWack(2,2,12,1,practiceAc))
 // The function above needs to be simplified a little more.  Just have it calculate to hit.
