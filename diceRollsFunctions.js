@@ -45,7 +45,8 @@ const savingThrow = (abilityModifier, saveDcToBeat) =>{
 };
 // console.log(savingThrow(2,10))
 
-let practiceAc = 14
+let practiceAc = 14;
+let heroAC = 18;
 
 const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acToHit) =>{
     let totalToHit = rollDice();
@@ -72,21 +73,22 @@ const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acT
 //1d6 for damage +1 bonus
 //const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acToHit) =>{
    //////WORK ON REDOING THE ATTACK FUNCTION
-    let totalToHit = rollDice();
-    if(totalToHit === 20){
-        console.log(`Enemy rolled a ${totalToHit}\nCRITICAL HIT!`);
-        return damageRoll(damageBonus,damageDie,numberOfDamageDice) + damageRoll(0,damageDie);
-        
-    }else if(totalToHit === 1){
-        console.log(`You rolled a ${totalToHit}\nEPIC FAILURE!`);//pull from random shit top happen
-        return `Bad shit happens to you`
-    }else{
-    console.log(`You rolled a ${totalToHit += hitBonus} to hit`)
-        if(totalToHit > acToHit){
-            return `You do ${damageRoll(damageBonus,damageDie, numberOfDamageDice)} damage`
+    let enemyAttacks = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice, acToHit) =>{
+        if(totalToHit === 20){
+            console.log(`Enemy rolled a ${totalToHit}\nCRITICAL HIT!`);
+            return damageRoll(damageBonus,damageDie,numberOfDamageDice) + damageRoll(0,damageDie);
+            
+        }else if(totalToHit === 1){
+            console.log(`Enemy rolled a ${totalToHit}\nEPIC FAILURE!`);//pull from random shit top happen
+            return `Bad shit happens to them.`
         }else{
-            return `Your attack missed!`
-}
+        console.log(`Enemy rolled a ${totalToHit += hitBonus} to hit`)
+            if(totalToHit > acToHit){
+                return `They do ${damageRoll(damageBonus,damageDie, numberOfDamageDice)} damage`
+            }else{
+                return `Their attack missed!`
+    }
+    }
 };
 
 
@@ -96,4 +98,5 @@ module.exports={
     rollDice: rollDice,
     skillCheckRoll: skillCheckRoll,
     damageRoll: damageRoll,
+    enemyAttacks: enemyAttacks,
 }
