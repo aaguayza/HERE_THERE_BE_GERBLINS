@@ -27,12 +27,26 @@ const damageRoll=(damageBonus,damageDie, numberOfDice = 1)=>{
 
 //Profeciency bonus will be calculated and given as an argument from character object
 const skillCheckRoll = (profeciencyBonus)=>{
-    const dieRolled = rollDice();
+    let dieRolled = rollDice();
     return dieRolled + profeciencyBonus;
 }
 // console.log(skillCheckRoll(2));
 
+//saving throws require the ability modifier
+const savingThrow = (abilityModifier, saveDcToBeat) =>{
+    let dc = saveDcToBeat;
+    let dieRolled = rollDice();
+    dieRolled += abilityModifier;
+    if(dieRolled > dc){
+        return 'Passed!'
+    }else{
+        return 'Failed!'
+    }
+};
+console.log(savingThrow(2,10))
+
 let practiceAc = 14
+
 const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acToHit) =>{
     let totalToHit = rollDice();
     if(totalToHit === 20){
@@ -52,7 +66,7 @@ const rollToWack = (hitBonus = 2, damageBonus, damageDie, numberOfDamageDice,acT
 };
 }
 //Though he numbers are hard coded, they can be filled in from properties from the character objects.
-console.log(rollToWack(2,2,12,1,practiceAc))
+// console.log(rollToWack(2,2,12,1,practiceAc))
 // The function above needs to be simplified a little more.  Just have it calculate to hit.
 //1d6 for damage +1 bonus
 // const enemyAttacks = (hitBonus = 1) =>{
@@ -75,4 +89,5 @@ module.exports={
     rollToWack: rollToWack,
     rollDice: rollDice,
     skillCheckRoll: skillCheckRoll,
+    damageRoll: damageRoll,
 }
