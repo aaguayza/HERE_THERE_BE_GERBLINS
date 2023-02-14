@@ -1,7 +1,7 @@
 const diceRollsFunctions = require("./diceRollsFunctions");
 const input = require("readline-sync");
 const { rollToWack, enemyAttacks } = require("./diceRollsFunctions");
-
+ef
 //Think about how to tackle the initiative statement
 const commands = ['attack']
 let enemyhitPoints = 12;
