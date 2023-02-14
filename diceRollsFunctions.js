@@ -44,7 +44,7 @@ const savingThrow = (abilityModifier, saveDcToBeat) =>{
     }
 };
 // console.log(savingThrow(2,10))
-console.log()
+console.log('Something')
 
 
 
