@@ -38,12 +38,13 @@ const savingThrow = (abilityModifier, saveDcToBeat) =>{
     let dieRolled = rollDice();
     dieRolled += abilityModifier;
     if(dieRolled > dc){
-       fe return 'Passed!'
+        return 'Passed!'
     }else{
         return 'Failed!'
     }
 };
 // console.log(savingThrow(2,10))
+console.log()
 
 
 
